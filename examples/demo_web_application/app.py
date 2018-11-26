@@ -89,7 +89,8 @@ def logout():
 @app.route('/behindauth')
 @authenticated
 def behindauth():
-    return "You've revealed all the secrets! Your token is: " + h["Freelancer-OAuth-V1"]
+    #returns cred key as json 
+    return jsonify({'key : {} '.format(h["Freelancer-OAuth-V1"])})
 # Create a project with the logged in user's credentials.
 @app.route('/create_project', methods=["GET", "POST"])
 @authenticated
